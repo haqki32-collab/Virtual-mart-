@@ -7,8 +7,9 @@ import React, { useState } from 'react';
 import { ShoppingBag, Truck, CreditCard, ArrowLeft, Phone, User, Home, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 import { OrderDetails, PaymentMethod, CartItem } from '../types';
-import { JAZZCASH_NUMBER, WHATSAPP_NUMBER, OWNER_NAME } from '../constants';
+import { JAZZCASH_NUMBER, WHATSAPP_NUMBER, OWNER_NAME, MIN_ORDER_AMOUNT, DELIVERY_CHARGES } from '../constants';
 import { cn, formatPrice } from '../lib/utils';
+import { AlertCircle } from 'lucide-react';
 
 interface CheckoutFormProps {
   onBack: () => void;
@@ -26,8 +27,9 @@ export default function CheckoutForm({ onBack, cartItems, onConfirmed }: Checkou
   });
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const deliveryFee = 100;
+  const deliveryFee = DELIVERY_CHARGES;
   const total = subtotal + deliveryFee;
+  const isOrderValid = subtotal >= MIN_ORDER_AMOUNT;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -217,11 +219,23 @@ Please confirm my order.`;
 
             <button
               type="submit"
-              className="w-full py-5 bg-green-600 text-white rounded-3xl font-black text-lg shadow-xl shadow-green-500/20 hover:bg-green-700 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
+              disabled={!isOrderValid}
+              className={cn(
+                "w-full py-5 text-white rounded-3xl font-black text-lg shadow-xl transition-all flex items-center justify-center gap-3 active:scale-[0.98]",
+                isOrderValid 
+                  ? "bg-green-600 shadow-green-500/20 hover:bg-green-700" 
+                  : "bg-gray-300 cursor-not-allowed shadow-none"
+              )}
             >
               Confirm Order on WhatsApp
               <Truck className="w-6 h-6" />
             </button>
+            {!isOrderValid && (
+              <p className="text-center text-red-600 text-xs font-bold flex items-center justify-center gap-1.5 mt-2">
+                <AlertCircle className="w-3.5 h-3.5" />
+                Minimum order amount is {formatPrice(MIN_ORDER_AMOUNT)}
+              </p>
+            )}
           </form>
 
           {/* Summary - Desktop Sticky */}

@@ -116,7 +116,7 @@ export default function MenuDrawer({ isOpen, onClose, onNavigate }: MenuDrawerPr
 
             <div className="p-8 border-t border-gray-100 text-center">
               <p className="text-gray-400 text-[10px] font-black tracking-widest uppercase mb-1">
-                © 2026 Virtual Mart
+                © 2026 Rizqdaan Grocery
               </p>
               <p className="text-[9px] text-gray-300 font-bold">ALL RIGHTS RESERVED</p>
             </div>

@@ -28,7 +28,7 @@ export default function Header({ cartCount, onCartClick, onMenuClick, onSearchCh
               <ShoppingCart className="w-4 h-4 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-900 tracking-tight font-display">
-              Virtual<span className="text-green-600">Mart</span>
+              Rizqdaan<span className="text-green-600">Grocery</span>
             </span>
           </div>
 

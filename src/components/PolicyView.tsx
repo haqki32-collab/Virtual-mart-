@@ -68,7 +68,7 @@ export default function PolicyView({ type, onBack }: PolicyViewProps) {
       <>
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-2">1. Acceptance of Terms</h2>
-          <p>By accessing and using Virtual Mart, you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
+          <p>By accessing and using Rizqdaan Grocery, you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
         </section>
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-2">2. Delivery Zones</h2>
@@ -97,7 +97,7 @@ export default function PolicyView({ type, onBack }: PolicyViewProps) {
         </section>
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-2">3. Third Parties</h2>
-          <p>We do not sell or share your personal data with any third-party marketing agencies. Your information stays with Virtual Mart.</p>
+          <p>We do not sell or share your personal data with any third-party marketing agencies. Your information stays with Rizqdaan Grocery.</p>
         </section>
       </>
     )}
@@ -107,7 +107,7 @@ export default function PolicyView({ type, onBack }: PolicyViewProps) {
         <section className="bg-red-50 p-6 rounded-3xl border border-red-100">
           <h2 className="text-2xl font-black text-red-600 mb-4 font-display uppercase tracking-tight">Important Notice: No Return & No Refund Policy</h2>
           <p className="text-red-800 font-bold leading-relaxed">
-            Please note that Virtual Mart does NOT offer any returns or refunds. 
+            Please note that Rizqdaan Grocery does NOT offer any returns or refunds. 
           </p>
           <p className="mt-4 text-red-700/80">
             Once an order is confirmed and processed, it cannot be returned, exchanged, or refunded under any circumstances. 
