@@ -91,7 +91,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, quantityInCart, onAd
           </div>
           <div className="flex items-center gap-0.5 text-gray-400 font-bold">
             <MapPin className="w-2.5 h-2.5 text-gray-300" />
-            <span>Sargodha</span>
+            <span>Mansehra</span>
           </div>
         </div>
         
